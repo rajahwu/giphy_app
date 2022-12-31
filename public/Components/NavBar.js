@@ -18,13 +18,25 @@ const tagElements = [];
 tags.forEach(tag => {
     const el = document.createElement('div');
     el.setAttribute('id', tag);
-    el.classList.add('class');
+    el.classList.add(tag);
     el.classList.add('tag');
+    const text = document.createElement('span');
+    text.classList.add('icon-text');
+    text.innerText = tag.toUpperCase();
+    el.append(text)
+    const tagImg = document.createElement('img');
+    tagImg.classList.add('icon');
+    tagImg.width = 25
+    tagImg.height = 25
+    tagImg.src = `./public/icons/${tag}.png`
+    el.append(tagImg);
+    el.addEventListener('click', () => {
+        alert(`search ${tag}`)
+    })
     tagElements.push(el);
 })
 
 tagElements.forEach((element, i) => {
-    element.innerText = tags[i].toUpperCase();
     TagContainer.append(element)
 })
 
