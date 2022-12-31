@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree&display=swap');
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.root {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: hsl(0, 0%, 10%);
+    color: hsl(0, 25%, 100%);
+    font-family: 'Figtree', sans-serif;;
+}
+
+.card-container {
+    margin-top: 5vh;
+    max-width: 300px;
+    max-height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 2px solid  hsla(0, 25%, 0%, 0.3);
+    box-shadow: inset 5px 5px 5px  hsl(0, 5%, 10%);
+    background-color:hsl(0, 5%, 15%);
+    border-radius: 5px;
+    padding: 10rem 0.5rem;
+}
+
+.card-title {
+    font-size: 1rem;
+    margin-bottom: 5vh;
+}
+
+.gif-image {
+    border-radius: 5px;
+}
+
+.advice-container {
+    margin-top: 5vh;
+}
+
+.button-container {
+    margin-top: 5vh;
+}
+
+.like-button {
+    margin-right: 0.5vw;
+    border-radius: 50%;
+    background-color: black;
+}
+
+.comment-button {
+    margin-left: 0.5vw;
+    border-radius: 50%;
+    background-color: black;
+}
+
+.blurred {
+    filter: blur(0.5rem);
+}
+
