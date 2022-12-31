@@ -1,15 +1,14 @@
 {
-  "name": "giphy_app",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "gif_app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.18.2"
+  "devDependencies": {
+    "vite": "^4.0.0"
   }
 }

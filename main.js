@@ -1,25 +1,28 @@
-import { getGif } from "./getGif.js";
-import { getAdvice } from "./getAdvice.js";
-import { root, CardContainer, Card, CardTitle, GifImage, AdviceContainer, ButtonContainer, LikeButton, CommentButton } from "../Components/index.js";
+import './style.css'
+import { getGif } from './public/src/getGif';
 
+import { getAdvice } from "./public/src/getAdvice.js";
+import { root, CardContainer, Card, CardTitle, GifImage, AdviceContainer, ButtonContainer, LikeButton, CommentButton } from "./public/Components/index.js";
 
-async function app() {
+window.onload =  RunApp;
+
+async function RunApp() {
     renderGifCard();
-    renderNewContent();
+    renderContent();
 }
 
 function renderGifCard() {
     root.append(CardContainer);
-    CardContainer.append(CardTitle);
+    CardContainer.append(AdviceContainer);
     CardContainer.append(Card);
     CardContainer.append(GifImage);
-    CardContainer.append(AdviceContainer);
     CardContainer.append(ButtonContainer);
+    CardContainer.append(CardTitle);
     ButtonContainer.append(LikeButton);
     ButtonContainer.append(CommentButton);
 }
 
-function renderNewContent() {
+function renderContent() {
     blurrElement(CardContainer, 750);
     renderGif();
     renderAdvice();
@@ -29,7 +32,7 @@ function blurrElement(element, duration) {
     element.classList.add('blurred');
     setTimeout(() => {
         element.classList.remove('blurred');
-    }, duration)
+    }, duration);
 }
 
 async function renderGif() {
@@ -48,8 +51,6 @@ async function renderAdvice() {
     AdviceContainer.innerText = `"${advice}"`;
 }
 
-GifImage.addEventListener('click', renderNewContent);
-
-app()
+GifImage.addEventListener('click', renderContent);
 
 export default {}

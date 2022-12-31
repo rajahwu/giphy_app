@@ -31,21 +31,33 @@
 }
 
 .card-title {
-    font-size: 1rem;
-    margin-bottom: 5vh;
+    font-size: 0.7rem;
 }
 
 .gif-image {
     border-radius: 5px;
-    box-shadow: 5px 5px 5px  hsl(0, 5%, 10%);
+    box-shadow:inset 5px 5px 5px  hsl(0, 5%, 10%);
+    margin: 1vh 0;
 }
 
 .advice-container {
-    margin-top: 5vh;
+    font-size: 1.2rem;
+    background-color:  hsla(0, 5%, 10%, 0.3);
+    box-shadow: 5px 5px 5px  hsl(0, 5%, 10%);
+    border-radius: 5px;
+    padding: 10px 5px;
+    margin-bottom: 5vh;
+    transition-property: background-color;
+    transition-duration: 500ms;
+    transition-delay: 250ms;
+}
+
+.advice-container:hover {
+    background-color:  hsla(0, 5%, 10%, 0.7);
 }
 
 .button-container {
-    margin-top: 5vh;
+    margin: 3vh 0;
 }
 
 .like-button {
