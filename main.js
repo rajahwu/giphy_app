@@ -1,10 +1,10 @@
-import './style.css'
+import './style.css';
 import { getGif } from './public/src/getGif';
 
 import { getAdvice } from "./public/src/getAdvice.js";
-import { root, CardContainer, Card, CardTitle, GifImage, AdviceContainer, ButtonContainer, LikeButton, CommentButton } from "./public/Components/index.js";
+import { root, CardContainer, Card, CardTitle, GifImage, AdviceContainer, ButtonContainer, LikeButton, CommentButton, NavBarContainer, Home, TagContainer, tags, tagElements } from "./public/Components/index.js";
 
-window.onload =  RunApp;
+window.onload = RunApp;
 
 async function RunApp() {
     renderGifCard();
@@ -50,7 +50,11 @@ async function renderAdvice() {
     const advice = adviceData['slip']['advice'];
     AdviceContainer.innerText = `"${advice}"`;
 }
+// -----------------------------------------
 
 GifImage.addEventListener('click', renderContent);
+
+root.append(NavBarContainer);
+
 
 export default {}
