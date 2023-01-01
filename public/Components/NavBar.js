@@ -30,9 +30,9 @@ tags.forEach(tag => {
     tagImg.height = 25
     tagImg.src = `./public/icons/${tag}.png`
     el.append(tagImg);
-    el.addEventListener('click', () => {
-        alert(`search ${tag}`)
-    })
+    // el.addEventListener('click', () => {
+    //     alert(`search ${tag}`)
+    // })
     tagElements.push(el);
 })
 

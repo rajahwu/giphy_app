@@ -1,6 +1,5 @@
 import './style.css';
 import { getGif } from './public/src/getGif';
-
 import { getAdvice } from "./public/src/getAdvice.js";
 import { root, CardContainer, Card, CardTitle, GifImage, AdviceContainer, ButtonContainer, LikeButton, CommentButton, NavBarContainer } from "./public/Components/index.js";
 
@@ -12,6 +11,8 @@ root.append(app);
 
 app.append(NavBarContainer);
 GifImage.addEventListener('click', renderContent);
+document.getElementById('home').addEventListener('click', renderContent);
+document.getElementById('comedy').addEventListener('click', () => renderContent('comedy%2C+funny'));
 
 async function RunApp() {
     renderGifCard();
@@ -29,9 +30,9 @@ function renderGifCard() {
     ButtonContainer.append(CommentButton);
 }
 
-function renderContent() {
+function renderContent(params) {
     blurrElement(CardContainer, 750);
-    renderGif();
+    renderGif(params);
     renderAdvice();
 }
 
@@ -48,6 +49,7 @@ async function renderGif() {
     const index = Math.floor(Math.random() * data.length);
     const gifTitle = data[index]['title'];
     const gifImageOriginal = data[index]['images']['original'];
+    console.log(data)
     CardTitle.innerText = gifTitle;
     GifImage.src = gifImageOriginal['url'];
 }
@@ -57,7 +59,6 @@ async function renderAdvice() {
     const advice = adviceData['slip']['advice'];
     AdviceContainer.innerText = `"${advice}"`;
 }
-// -----------------------------------------
 
 
 
