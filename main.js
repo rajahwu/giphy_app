@@ -2,9 +2,16 @@ import './style.css';
 import { getGif } from './public/src/getGif';
 
 import { getAdvice } from "./public/src/getAdvice.js";
-import { root, CardContainer, Card, CardTitle, GifImage, AdviceContainer, ButtonContainer, LikeButton, CommentButton, NavBarContainer, Home, TagContainer, tags, tagElements } from "./public/Components/index.js";
+import { root, CardContainer, Card, CardTitle, GifImage, AdviceContainer, ButtonContainer, LikeButton, CommentButton, NavBarContainer } from "./public/Components/index.js";
 
 window.onload = RunApp;
+const app = document.createElement('div');
+app.setAttribute('id', 'app');
+app.classList.add('app');
+root.append(app);
+
+app.append(NavBarContainer);
+GifImage.addEventListener('click', renderContent);
 
 async function RunApp() {
     renderGifCard();
@@ -12,7 +19,7 @@ async function RunApp() {
 }
 
 function renderGifCard() {
-    root.append(CardContainer);
+    app.append(CardContainer);
     CardContainer.append(AdviceContainer);
     CardContainer.append(Card);
     CardContainer.append(GifImage);
@@ -52,9 +59,7 @@ async function renderAdvice() {
 }
 // -----------------------------------------
 
-GifImage.addEventListener('click', renderContent);
 
-root.append(NavBarContainer);
 
 
 export default {}

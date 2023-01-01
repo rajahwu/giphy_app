@@ -16,13 +16,23 @@
 }
 
 .root {
+    background-color: var(--secondary-bg-color);
+    color: var(--main-font-color);
+    font-family: 'Figtree', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+}
+
+.app {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-color: var(--secondary-bg-color);
-    color: var(--main-font-color);
-    font-family: 'Figtree', sans-serif;
+    height: 90vh;
+    position: fixed;
+    top: 5vh;
 }
 
 .home {
